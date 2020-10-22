@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --highlight: #e7ffd7;
+    --light-green: #add797;
+    --green: #599079;
+    --dark-green: #1a3b41;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #c0c0c0;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+p {
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    color: var(--dark-green); 
+}
+
+#game-board {
+    display: grid;
+    grid-template-rows: repeat(21, 1fr);
+    grid-template-columns: repeat(21, 1fr);
+    width: 80vmin;
+    height: 80vmin;
+    background-color: var(--light-green);
+    border: 6px solid #000;
+}
+
+.snake {
+    background-color: var(--green);
+    border: 0.25vmin solid var(--light-green);
+}
+
+.apple {
+    content: url(./apple-alt-solid.svg);
+}
