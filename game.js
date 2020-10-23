@@ -2,11 +2,11 @@ import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, sn
 import { update as updateApple, draw as drawApple} from './apple.js'
 import { outsideGrid } from './grid.js';
 
+
 let lastRenderTime = 0;
 let gameOver = false;
 let gameWin = false;
 const gameBoard = document.getElementById('game-board');
-
 
 const highGameScoreInHtml = document.getElementById('high-Score');
 
@@ -67,7 +67,7 @@ export function setGameScore() {
     gameScore = snakeBody.length;
     currentGameScoreInHtml.innerText = gameScore;
     
-    gameWin = ( gameScore > 440 );
+    gameWin = ( gameScore >= 440 );
 }
 
 // 최고기록
@@ -91,3 +91,18 @@ window.addEventListener('keydown', e => {
     }
 });
 
+
+// 나니도
+
+function setModeListener (mode, speed) {
+    document.getElementById(mode).addEventListener('click', function () { SNAKE_SPEED = speed; });
+}
+
+let modeDropdown = document.getElementById('selectMode');
+    if ( modeDropdown ) {
+        modeDropdown.addEventListener('change', function(evt) {
+        
+
+        console.log(SNAKE_SPEED);
+    });
+}

@@ -4,8 +4,6 @@ export const SNAKE_SPEED = 6;
 export const snakeBody = [{ x: 11, y: 11 },];
 let newSegments = 0;
 
-
-
 export function update() {
     addSegments();
     const inputDirection = getInputDirection();

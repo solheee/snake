@@ -15,25 +15,35 @@
 
 </head>
 <body>
-    <h1>Snake Game</h1>
-    <div id="game-board"></div>
-
-    <div class="record">
-        <div class="record__column">
-        	<div class="score-title">SCORE</div>
-        	<div id="game-Score">0</div>
-        </div>
-        <div class="record__column">
-            <div class="score-title">HIGH-SCORE</div>
-        	<div id="high-Score">0</div>
-        </div>
-    </div>
+    <div class="container">
+        <h1>Snake Game</h1>
+        <div id="game-board"></div>
     
-    <p class="press-to-start">Press arrow key <br> to start game</p>
+        <div class="record">
+            <div class="record__column">
+            	<div class="score-title">SCORE</div>
+            	<div id="game-Score">0</div>
+            </div>
+            <div class="record__column">
+                <div class="score-title">HIGH-SCORE</div>
+            	<div id="high-Score">0</div>
+            </div>
+        </div>
+        
+        <div class="difficulty">
+            <select name="" id="selectMode">
+                <option value="volvo">easy</option>
+                <option value="saab">normal</option>
+                <option value="mercedes">difficult</option>
+            </select>
+        </div>
 
-    <div class="no-small-screen">
-        <img src="sad-face.svg">
-        Screen is too&nbsp;small
+        <p class="press-to-start">Press arrow key <br> to start game</p>
+    
+        <div class="no-small-screen">
+            <img src="sad-face.svg">
+            Screen is too&nbsp;small
+        </div>
     </div>
 
     <script src="game.js" type="module"></script>
