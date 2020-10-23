@@ -19,18 +19,13 @@ body {
     width: 100vw;
     height: 100vh;
     font-family: 'Press Start 2P', cursive;
-    background-color: #c0c0c0;
+    background-color: #d6d6d6;
 }
 
 h1 {
     margin-bottom: 5px;
-}
-
-p {
-    position: absolute;
-    font-size: 12px;
-    text-align: center;
-    color: var(--dark-green); 
+    font-size: 5vmin;
+    color: #404484;
 }
 
 #game-board {
@@ -39,8 +34,10 @@ p {
     grid-template-columns: repeat(21, 1fr);
     width: 80vmin;
     height: 80vmin;
+    max-width: 680px;
+    max-height: 680px;
     background-color: var(--light-green);
-    border: 6px solid #000;
+    border: 1vmin solid #000;
 }
 
 .snake {
@@ -52,4 +49,62 @@ p {
     width: 3.5vmin;
     height: 3.5vmin;
     content: url(./apple-alt-solid.svg);
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.press-to-start {
+    display: block;
+    position: absolute;
+    font-size: 3vmin;
+    text-align: center;
+    color: var(--dark-green);
+    animation: flicker 1.5s infinite alternate cubic-bezier(0.21,-0.25, 0.7, 0.51);
+}
+
+.record {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    max-width: 680px;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.record__column {
+    display: flex;
+    flex-direction: row;
+}
+
+.record__column .score-title {
+    margin-right: 10px;
+}
+
+.no-small-screen {
+    display: none;
+}
+
+@media (max-width: 520px) {
+    .no-small-screen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        background-color: #d6d6d6;
+    }
+    .no-small-screen img {
+        margin-bottom: 50px;
+        width: 100px;
+    }
 }

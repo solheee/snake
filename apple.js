@@ -1,3 +1,4 @@
+import { setGameScore } from './game.js';
 import { onSnake, expandSnake } from './snake.js';
 import { randomGridPosition } from './grid.js';
 
@@ -8,6 +9,7 @@ export function update() {
     if (onSnake(apple)) {
         expandSnake(EXPANSION_RATE);
         apple = getRandomApplePosition();
+        setGameScore();
     }
 };
 

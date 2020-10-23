@@ -10,8 +10,23 @@
     <h1>Snake Game</h1>
     <div id="game-board"></div>
 
+    <div class="record">
+        <div class="record__column">
+        	<div class="score-title">SCORE</div>
+        	<div id="game-Score">0</div>
+        </div>
+        <div class="record__column">
+            <div class="score-title">HIGH-SCORE</div>
+        	<div id="high-Score">440</div>
+        </div>
+    </div>
+    
+    <p class="press-to-start">Press arrow key <br> to start game</p>
 
-    <!-- <p>Press arrow key <br> to start game</p> -->
+    <div class="no-small-screen">
+        <img src="sad-face.svg">
+        Screen is too&nbsp;small
+    </div>
 
     <script src="game.js" type="module"></script>
 </body>
