@@ -47,9 +47,10 @@ h1 {
 }
 
 .apple {
-    width: 3.5vmin;
-    height: 3.5vmin;
-    content: url(./apple-alt-solid.svg);
+    background-image: url(./apple-alt-solid.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 @keyframes flicker {
