@@ -85,13 +85,14 @@ h1 {
 
 .record__column .score-title {
     margin-right: 10px;
+    color: #404484;
 }
 
 .no-small-screen {
     display: none;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 500px) {
     .no-small-screen {
         display: flex;
         flex-direction: column;

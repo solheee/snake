@@ -6,7 +6,6 @@ let lastRenderTime = 0;
 let gameOver = false;
 let gameWin = false;
 const gameBoard = document.getElementById('game-board')
-localStorage.setItem("score", 0);
 
 function main(currentTime) {
 
@@ -53,22 +52,32 @@ function checkDeath() {
 }
 
 
+// 현재 점수
+let gameScore = 0;
 export function setGameScore() {
-    const gameScoreInHtml = document.getElementById('game-Score');
-    let gameScore = 0;
+    const currentGameScoreInHtml = document.getElementById('game-Score');
+    
     gameScore = snakeBody.length;
-    gameScoreInHtml.innerText = gameScore;
+    currentGameScoreInHtml.innerText = gameScore;
     
     gameWin = ( gameScore > 440 );
+}
 
-    
-    let saveScore = 0;
+// 최고기록
+function setHighScore() {
+    let saveScore;
+    saveScore = localStorage.getItem("score");
+
     if (gameScore > saveScore) {
         localStorage.setItem("score", gameScore);
     }
-    saveScore = localStorage.getItem("score");
-}
 
+    const highGameScoreInHtml = document.getElementById('high-Score');
+    highGameScoreInHtml.innerText = saveScore;
+}
+setHighScore()
+
+// 프레스 투 스타트 문구
 const pressToStart = document.querySelector('.press-to-start')
 window.addEventListener('keydown', e => {
     switch (e.key) {
