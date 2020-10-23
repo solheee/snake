@@ -11,6 +11,7 @@ export function update() {
         apple = getRandomApplePosition();
         setGameScore();
         setHighScore();
+        biteSound.play();
     }
 };
 
@@ -30,3 +31,5 @@ function getRandomApplePosition() {
     };
     return newApplePosition
 }
+
+let biteSound = new Audio('./bite.mp3');
