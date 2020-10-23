@@ -5,7 +5,14 @@ import { outsideGrid } from './grid.js';
 let lastRenderTime = 0;
 let gameOver = false;
 let gameWin = false;
-const gameBoard = document.getElementById('game-board')
+const gameBoard = document.getElementById('game-board');
+
+
+const highGameScoreInHtml = document.getElementById('high-Score');
+
+let saveScore = localStorage.getItem("score");
+highGameScoreInHtml.innerText = saveScore;
+
 
 function main(currentTime) {
 
@@ -64,18 +71,12 @@ export function setGameScore() {
 }
 
 // 최고기록
-function setHighScore() {
-    let saveScore;
-    saveScore = localStorage.getItem("score");
-
+export function setHighScore() {
     if (gameScore > saveScore) {
         localStorage.setItem("score", gameScore);
     }
-
-    const highGameScoreInHtml = document.getElementById('high-Score');
-    highGameScoreInHtml.innerText = saveScore;
 }
-setHighScore()
+
 
 // 프레스 투 스타트 문구
 const pressToStart = document.querySelector('.press-to-start')
